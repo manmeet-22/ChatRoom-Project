@@ -1,0 +1,140 @@
+-------------------------------------------------------------------------------
+Test set: edu.udacity.java.nano.WebSocketChatApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 43.438 s <<< FAILURE! - in edu.udacity.java.nano.WebSocketChatApplicationTest
+testLeave(edu.udacity.java.nano.WebSocketChatApplicationTest)  Time elapsed: 11.564 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 77
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'NISHANTY', ip: '192.168.2.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_181'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x003DEB13+1501971]
+	Ordinal0 [0x0035F6D1+980689]
+	Ordinal0 [0x002E765F+489055]
+	Ordinal0 [0x0027F2F4+62196]
+	Ordinal0 [0x0027BCDA+48346]
+	Ordinal0 [0x00299800+169984]
+	Ordinal0 [0x0029942D+169005]
+	Ordinal0 [0x002978EB+162027]
+	Ordinal0 [0x00280AC7+68295]
+	Ordinal0 [0x00281B40+72512]
+	Ordinal0 [0x00281AD9+72409]
+	Ordinal0 [0x00378F37+1085239]
+	GetHandleVerifier [0x0047D7ED+503293]
+	GetHandleVerifier [0x0047D580+502672]
+	GetHandleVerifier [0x004846AC+531644]
+	GetHandleVerifier [0x0047DFFA+505354]
+	Ordinal0 [0x00370606+1050118]
+	Ordinal0 [0x0037047F+1049727]
+	Ordinal0 [0x0037AF9B+1093531]
+	Ordinal0 [0x0037B103+1093891]
+	Ordinal0 [0x0037A095+1089685]
+	BaseThreadInitThunk [0x750C7C04+36]
+	RtlInitializeExceptionChain [0x777AB54F+143]
+	RtlInitializeExceptionChain [0x777AB51A+90]
+
+	at edu.udacity.java.nano.WebSocketChatApplicationTest.initialization(WebSocketChatApplicationTest.java:38)
+
+testLogin(edu.udacity.java.nano.WebSocketChatApplicationTest)  Time elapsed: 4.809 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 77
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'NISHANTY', ip: '192.168.2.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_181'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x003DEB13+1501971]
+	Ordinal0 [0x0035F6D1+980689]
+	Ordinal0 [0x002E765F+489055]
+	Ordinal0 [0x0027F2F4+62196]
+	Ordinal0 [0x0027BCDA+48346]
+	Ordinal0 [0x00299800+169984]
+	Ordinal0 [0x0029942D+169005]
+	Ordinal0 [0x002978EB+162027]
+	Ordinal0 [0x00280AC7+68295]
+	Ordinal0 [0x00281B40+72512]
+	Ordinal0 [0x00281AD9+72409]
+	Ordinal0 [0x00378F37+1085239]
+	GetHandleVerifier [0x0047D7ED+503293]
+	GetHandleVerifier [0x0047D580+502672]
+	GetHandleVerifier [0x004846AC+531644]
+	GetHandleVerifier [0x0047DFFA+505354]
+	Ordinal0 [0x00370606+1050118]
+	Ordinal0 [0x0037047F+1049727]
+	Ordinal0 [0x0037AF9B+1093531]
+	Ordinal0 [0x0037B103+1093891]
+	Ordinal0 [0x0037A095+1089685]
+	BaseThreadInitThunk [0x750C7C04+36]
+	RtlInitializeExceptionChain [0x777AB54F+143]
+	RtlInitializeExceptionChain [0x777AB51A+90]
+
+	at edu.udacity.java.nano.WebSocketChatApplicationTest.initialization(WebSocketChatApplicationTest.java:38)
+
+testChat(edu.udacity.java.nano.WebSocketChatApplicationTest)  Time elapsed: 4.595 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 77
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'NISHANTY', ip: '192.168.2.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_181'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x003DEB13+1501971]
+	Ordinal0 [0x0035F6D1+980689]
+	Ordinal0 [0x002E765F+489055]
+	Ordinal0 [0x0027F2F4+62196]
+	Ordinal0 [0x0027BCDA+48346]
+	Ordinal0 [0x00299800+169984]
+	Ordinal0 [0x0029942D+169005]
+	Ordinal0 [0x002978EB+162027]
+	Ordinal0 [0x00280AC7+68295]
+	Ordinal0 [0x00281B40+72512]
+	Ordinal0 [0x00281AD9+72409]
+	Ordinal0 [0x00378F37+1085239]
+	GetHandleVerifier [0x0047D7ED+503293]
+	GetHandleVerifier [0x0047D580+502672]
+	GetHandleVerifier [0x004846AC+531644]
+	GetHandleVerifier [0x0047DFFA+505354]
+	Ordinal0 [0x00370606+1050118]
+	Ordinal0 [0x0037047F+1049727]
+	Ordinal0 [0x0037AF9B+1093531]
+	Ordinal0 [0x0037B103+1093891]
+	Ordinal0 [0x0037A095+1089685]
+	BaseThreadInitThunk [0x750C7C04+36]
+	RtlInitializeExceptionChain [0x777AB54F+143]
+	RtlInitializeExceptionChain [0x777AB51A+90]
+
+	at edu.udacity.java.nano.WebSocketChatApplicationTest.initialization(WebSocketChatApplicationTest.java:38)
+
+testJoin(edu.udacity.java.nano.WebSocketChatApplicationTest)  Time elapsed: 2.928 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 77
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'NISHANTY', ip: '192.168.2.8', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_181'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x003DEB13+1501971]
+	Ordinal0 [0x0035F6D1+980689]
+	Ordinal0 [0x002E765F+489055]
+	Ordinal0 [0x0027F2F4+62196]
+	Ordinal0 [0x0027BCDA+48346]
+	Ordinal0 [0x00299800+169984]
+	Ordinal0 [0x0029942D+169005]
+	Ordinal0 [0x002978EB+162027]
+	Ordinal0 [0x00280AC7+68295]
+	Ordinal0 [0x00281B40+72512]
+	Ordinal0 [0x00281AD9+72409]
+	Ordinal0 [0x00378F37+1085239]
+	GetHandleVerifier [0x0047D7ED+503293]
+	GetHandleVerifier [0x0047D580+502672]
+	GetHandleVerifier [0x004846AC+531644]
+	GetHandleVerifier [0x0047DFFA+505354]
+	Ordinal0 [0x00370606+1050118]
+	Ordinal0 [0x0037047F+1049727]
+	Ordinal0 [0x0037AF9B+1093531]
+	Ordinal0 [0x0037B103+1093891]
+	Ordinal0 [0x0037A095+1089685]
+	BaseThreadInitThunk [0x750C7C04+36]
+	RtlInitializeExceptionChain [0x777AB54F+143]
+	RtlInitializeExceptionChain [0x777AB51A+90]
+
+	at edu.udacity.java.nano.WebSocketChatApplicationTest.initialization(WebSocketChatApplicationTest.java:38)
+

@@ -1,62 +1,100 @@
 package edu.udacity.java.nano.chat;
 
+import org.jboss.logging.Logger;
 import org.springframework.stereotype.Component;
+
+import com.alibaba.fastjson.JSON;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * WebSocket Server
+ * WebSocket Server.
  *
- * @see ServerEndpoint WebSocket Client
- * @see Session   WebSocket Session
+ * @author Manmeet Singh
  */
-
 @Component
 @ServerEndpoint("/chat")
 public class WebSocketChatServer {
 
-    /**
-     * All chat sessions.
-     */
-    private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
+	/** The logger. */
+	Logger logger = Logger.getLogger(WebSocketChatServer.class);
 
-    private static void sendMessageToAll(String msg) {
-        //TODO: add send message method.
-    }
+	/**
+	 * All chat sessions.
+	 */
+	private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
 
-    /**
-     * Open connection, 1) add session, 2) add user.
-     */
-    @OnOpen
-    public void onOpen(Session session) {
-        //TODO: add on open connection.
-    }
+	/**
+	 * Send Message To All.
+	 *
+	 * @param msg the msg
+	 */
+	private static void sendMessageToAll(String msg) {
+		for (Session session : onlineSessions.values()) {
+			try {
+				session.getBasicRemote().sendText(msg);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
-    /**
-     * Send message, 1) get username and session, 2) send message to all.
-     */
-    @OnMessage
-    public void onMessage(Session session, String jsonStr) {
-        //TODO: add send message.
-    }
+	/**
+	 * Open connection, 1) add session, 2) add user.
+	 *
+	 * @param session the session
+	 */
+	@OnOpen
+	public void onOpen(Session session) {
+		logger.info("Session Id : "+session.getId());
+		onlineSessions.put(session.getId() + "", session);
+		Message message = new Message();
+		message.setOnlineCount(onlineSessions.size());
+		sendMessageToAll(JSON.toJSONString(message));
+	}
 
-    /**
-     * Close connection, 1) remove session, 2) update user.
-     */
-    @OnClose
-    public void onClose(Session session) {
-        //TODO: add close connection.
-    }
+	/**
+	 * Send message, 1) get username and session, 2) send message to all.
+	 *
+	 * @param session the session
+	 * @param jsonStr the json str
+	 */
+	@OnMessage
+	public void onMessage(Session session, String jsonStr) {
+		logger.info("Message JSON String : "+jsonStr);
+		Message message = JSON.parseObject(jsonStr, Message.class);
+		message.setMessageType("SPEAK");
+		message.setOnlineCount(onlineSessions.size());
+		sendMessageToAll(JSON.toJSONString(message));
+	}
 
-    /**
-     * Print exception.
-     */
-    @OnError
-    public void onError(Session session, Throwable error) {
-        error.printStackTrace();
-    }
+	/**
+	 * Close connection, 1) remove session, 2) update user.
+	 *
+	 * @param session the session
+	 */
+	@OnClose
+	public void onClose(Session session) {
+		onlineSessions.remove(session.getId() + "");
+		Message message = new Message();
+		message.setOnlineCount(onlineSessions.size());
+		sendMessageToAll(JSON.toJSONString(message));
+	}
+
+	/**
+	 * Print exception.
+	 *
+	 * @param session the session
+	 * @param error the error
+	 */
+	@OnError
+	public void onError(Session session, Throwable error) {
+		error.printStackTrace();
+	}
 
 }
